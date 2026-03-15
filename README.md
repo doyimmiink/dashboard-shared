@@ -5,7 +5,6 @@ Entity-agnostic — works with any identifier: user IDs, tenant slugs, session t
 
 No external dependencies. Node.js 16+.
 
----
 
 ## Installation
 
@@ -13,7 +12,6 @@ No external dependencies. Node.js 16+.
 npm install @dashboard-shared/core
 ```
 
----
 
 ## Concepts
 
@@ -25,7 +23,6 @@ The library mirrors the architecture of discord.js sharding but applied to gener
 
 **IPCBroker** simulates the full multi-shard setup inside a single process. Useful for testing and for lightweight apps that want logical sharding without the overhead of forking.
 
----
 
 ## API reference
 
@@ -40,7 +37,6 @@ resolveShardId(5, 4);          // 1  (5 % 4)
 resolveShardId("user-abc", 4); // stable integer, same every call
 ```
 
----
 
 ### `ShardManager`
 
@@ -97,7 +93,6 @@ const results = await manager.broadcastEval("ctx.entityCount * 2");
 | `shardRespawning` | `id` | Auto-respawn is about to start |
 | `message` | `id, msg` | Shard sent a custom message |
 
----
 
 ### `ShardClient`
 
@@ -144,7 +139,6 @@ function handleRequest(entityId) {
 | `setContext(key, value)` | Exposes a value to the manager's eval calls |
 | `send(payload)` | Sends a custom message to the manager |
 
----
 
 ### `ClusterManager`
 
@@ -192,7 +186,6 @@ const status = manager.getStatus();
 | `resolve(entityId)` | `{ shardId, clusterId }` | Which cluster and shard own an entity |
 | `getStatus()` | `object[]` | Snapshot of every cluster |
 
----
 
 ### `IPCBroker`
 
@@ -233,7 +226,6 @@ broker.inspect();
 | `broadcastEval(script)` | Evaluates an expression against every shard's context |
 | `inspect()` | Returns metadata for all registered shards |
 
----
 
 ### `ShardRouter`
 
@@ -288,7 +280,6 @@ router.distribution();
 | `resolve(entityId)` | `{ entityId, shardId, clusterId, redirectUrl, isLocal }` | Full routing metadata |
 | `distribution()` | `{ clusterId, shards }[]` | Shard-to-cluster mapping table |
 
----
 
 ## Environment variables
 
@@ -304,8 +295,8 @@ When using `ShardManager` or `ClusterManager`, these variables are injected auto
 
 `ShardClient` reads `SHARD_ID`, `TOTAL_SHARDS`, and `CLUSTER_ID` automatically in its constructor.
 
----
 
 ## License
 
 MIT
+# dashboard-shared
