@@ -1,0 +1,21 @@
+{
+  "name": "@dashboard-shared/core",
+  "version": "1.0.0",
+  "description": "Sharding and clustering orchestration for dashboard applications. Entity-agnostic, zero dependencies.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "sharding",
+    "clustering",
+    "dashboard",
+    "ipc",
+    "multi-tenant",
+    "load-balancing"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
